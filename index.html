@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Rossbypalooza</title>
+	<meta name="description" content="Photo gallery using jquery lightbox effect" />
+	<meta name="keywords" content="pure css tab, css tab without javascript, flat design, animation, tabs" />
+	<meta name="author" content="Seven Signature" />
+	<meta name="viewport" content="width=device-width">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+	<script src="https://use.fontawesome.com/28738d165e.js"></script>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/style.css">
+
+
+
+</head>
+
+
+<style>
+
+@media only screen and (orientation:portrait) and (max-width: 930px){
+	.about {
+ 	   position: relative;
+ 	   top: -140px;
+	   /* background: #4dbda9; */
+    }
+
+	#slideshow ul {
+	  padding-left: 15%;
+
+	}
+
+	#logo {
+	  font-family: 'Open Sans', sans-serif;
+	  color: #555;
+	  text-decoration: none;
+	  /* text-transform: uppercase; */
+	  font-size: 70px;
+	  font-weight: 800;
+	  letter-spacing: -3px;
+	  line-height: 1;
+	  text-shadow: #EDEDED 3px 2px 0;
+	  position: relative;
+	}
+	#logo:after {
+	  content:"Rossbypalooza";
+	  position: absolute;
+	  left: 8px;
+	  top: 13px;
+	}
+	#logo:after {
+	  /*background: url(https://subtlepatterns.com/patterns/crossed_stripes.png) repeat;*/
+	  background-image: -webkit-linear-gradient(left top, transparent 0%, transparent 25%, #555 25%, #555 50%, transparent 50%, transparent 75%, #555 75%);
+	  background-size: 4px 4px;
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+	  z-index: -5;
+	  display: block;
+	  text-shadow: none;
+	}
+
+	#iconz img{
+		position: absolute;
+		top: 55px;
+		/* left: 45%; */
+		width: 15%;
+		right: 2%;
+	}
+
+
+	.col_2 h4{
+		/* background: #a7369a; */
+		font-size: 10px;
+	}
+
+	.col_2 p{
+		font-size: 10px;
+	}
+
+	/* .tf .col_2{
+		vertical-align:center;
+		width: 100%;
+		background: none;
+		text-align: left;
+		color: #000;
+		font-size: 16px;
+		padding-left: 10px;
+	}
+
+	.tf  img{
+		border: 2px solid white;
+		max-width: 60px;
+	} */
+
+	/* .ftab {
+
+		width: 50%;
+
+
+	} */
+
+}
+
+@media only screen and (orientation:landscape) and (max-width: 930px) {
+
+	.about {
+		position: relative;
+		top: 0px;
+		/* background: #93cc18; */
+	}
+
+	#slideshow ul {
+	  padding-left: 8%;
+
+	}
+
+	#logo {
+	  font-family: 'Open Sans', sans-serif;
+	  color: #555;
+	  text-decoration: none;
+	  /* text-transform: uppercase; */
+	  font-size: 80px;
+	  font-weight: 800;
+	  letter-spacing: -3px;
+	  line-height: 1;
+	  text-shadow: #EDEDED 3px 2px 0;
+	  position: relative;
+	}
+	#logo:after {
+	  content:"Rossbypalooza";
+	  position: absolute;
+	  left: 12px;
+	  top: 18px;
+	}
+	#logo:after {
+	  /*background: url(https://subtlepatterns.com/patterns/crossed_stripes.png) repeat;*/
+	  background-image: -webkit-linear-gradient(left top, transparent 0%, transparent 25%, #555 25%, #555 50%, transparent 50%, transparent 75%, #555 75%);
+	  background-size: 4px 4px;
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+	  z-index: -5;
+	  display: block;
+	  text-shadow: none;
+	}
+
+	#hugs{
+		/* padding-left: 300px; */
+		padding-left: 0%;
+		/* border: 1px solid black; */
+	}
+
+	#iconz img{
+		position: absolute;
+		top: 55px;
+		/* left: 45%; */
+		width: 20%;
+		right: -40%;
+	}
+
+
+}
+
+@media only screen and (max-width: 930px) {
+  label span {
+    font-size: 12px;
+  }
+  label .fa {
+    font-size: 18px;
+  }
+
+
+  #slideshow li a {
+  	top: 0px;
+	color: #8f8f8f;
+	}
+
+
+
+
+}
+
+
+@media only screen and (max-width: 768px) {
+
+#iconz img{
+	position: absolute;
+	top: 55px;
+	/* left: 45%; */
+	width: 20%;
+	right: -40%;
+}
+
+#face{
+	display: none;
+}
+
+
+ label span {
+   /* display: none; */
+ }
+
+ label .fa {
+   font-size: 16px;
+ }
+
+ .tab_container {
+   width: 150%;
+ }
+
+ /* #slideshow li a {
+   top: 100px;
+   } */
+
+   label {
+     /* font-weight: 400;
+     font-size: 15px;
+     display: block;
+     float: left;
+     width: 16.666667%;
+     padding-bottom: 25px;
+     padding-top: 25px;
+     color: #fff;
+     cursor: pointer;
+     text-decoration: none;
+     text-align: center;
+     background: #72818B; */
+     border-left: 2px solid #72818B;
+     border-right: 2px solid #72818B;
+     /* border-right: 1px solid black;
+     border-left: 1px solid black; */
+   }
+
+}
+
+/*Content Animation*/
+@keyframes fadeInScale {
+ 0% {
+   transform: scale(0.9);
+   opacity: 0;
+ }
+
+ 100% {
+   transform: scale(1);
+   opacity: 1;
+ }
+}
+</style>
+
+
+<body>
+
+	<!-- <div id="slideContainer">
+			</div> -->
+
+
+<div id="iconz">
+	<img src=img_site/symbol.png>
+</div>
+
+<div id="face">
+	<img src=img_site/face0.svg>
+</div>
+
+	<div class="wrapper">
+		<div class="header">
+
+			<!--O: pew -->
+
+			<div class="clearfix"></div>
+		</div>
+		<!-- <h1>Rossbypalooza</h1> -->
+		<div id = "hugs">
+			<!-- <h1>Rossbypalooza</h1> -->
+		<!-- <center><img src="img_site/og_white.png"></center> -->
+
+  <center><a href="/" id="logo">Rossbypalooza</a></center>
+		</div>
+		<div class="tab_container">
+			<input id="tab1" type="radio" name="tabs" checked>
+			<label for="tab1"><i class="fa fa-home"></i><span>Home</span></label>
+
+			<input id="tab2" type="radio" name="tabs">
+			<label for="tab2"><i class="fa fa-info-circle"></i><span>About</span></label>
+
+			<input id="tab3" type="radio" name="tabs">
+			<label for="tab3"><i class="fa fa-user-circle"></i><span>Faculty</span></label>
+
+			<input id="tab4" type="radio" name="tabs">
+			<label for="tab4"><i class="fa fa-check-square-o"></i><span>Application</span></label>
+
+			<input id="tab5" type="radio" name="tabs">
+			<label for="tab5"><i class="fa fa-map-marker"></i><span>Logistics</span></label>
+
+			<input id="tab6" type="radio" name="tabs">
+			<label for="tab6"><i class="fa fa-book"></i><span>Publication</span></label>
+			
+
+			<!-- HOME SECTION -->
+			<section id="content1" class="tab-content">
+
+				<!-- <div id="slideRight"> -->
+
+
+					<div id="slideChunk">
+					</div>
+
+			<center>
+
+					<div id="slideshow">
+
+						<ul>
+							<!--<li class='default'><img id="0" src="img_slide/webpage_pictures/1.jpeg" style="z-index:1; !important"/></li>!-->
+					  	  <li class='default'><img id="0" src="img_slide/webpage_pictures/1.jpeg" style="z-index:1;width:760px;height:380px;position:absolute;left:30%;top:20%;margin-left:-60px;margintop:-30px;"/></li>
+						
+						
+						
+						
+						
+						
+						
+						
+				 
+					</ul>
+
+					  <ul>
+						  <!-- <li class='default'><img id="1" src="img_slide/ross1800.png"/></li> -->
+						<li><img id="1" src="img_slide/webpage_pictures/1.jpeg" style="width:760px;height:380px;position:absolute;left:30%;top:20%;margin-left:-60px;margintop:-30px;"/><a href="#1">•</a></li>
+						<li><img id="2" src="img_slide/webpage_pictures/2.jpeg" style="width:760px;height:380px;position:absolute;left:30%;top:20%;margin-left:-60px;margintop:-30px;"/><a href="#2">•</a> </li>
+						<li><img id="3" src="img_slide/webpage_pictures/3.jpeg" style="width:760px;height:380px;position:absolute;left:30%;top:20%;margin-left:-60px;margintop:-30px;"/><a href="#3">•</a> </li>
+						<li><img id="4" src="img_slide/webpage_pictures/4.jpeg" style="width:760px;height:380px;position:absolute;left:30%;top:20%;margin-left:-60px;margintop:-30px;"/><a href="#4">•</a> </li>
+						<li><img id="5" src="img_slide/webpage_pictures/5.jpeg" style="width:760px;height:380px;position:absolute;left:30%;top:20%;margin-left:-60px;margintop:-30px;"/><a href="#5">•</a> </li>
+						<li><img id="6" src="img_slide/webpage_pictures/6.jpeg" style="width:760px;height:380px;position:absolute;left:30%;top:20%;margin-left:-60px;margintop:-30px;"/><a href="#6">•</a> </li>
+						<li><img id="7" src="img_slide/webpage_pictures/7.jpeg" style="width:760px;height:380px;position:absolute;left:30%;top:20%;margin-left:-60px;margintop:-30px;"/><a href="#7">•</a> </li>
+						<li><img id="8" src="img_slide/webpage_pictures/8.jpeg" style="width:760px;height:380px;position:absolute;left:30%;top:20%;margin-left:-60px;margintop:-30px;"/><a href="#8">•</a> </li>
+						<li><img id="9" src="img_slide/webpage_pictures/9.jpeg" style="width:760px;height:380px;position:absolute;left:30%;top:20%;margin-left:-60px;margintop:-30px;"/><a href="#9">•</a> </li>
+						<li><img id="10" src="img_slide/webpage_pictures/10.jpeg" style="width:760px;height:380px;position:absolute;left:30%;top:20%;margin-left:-60px;margintop:-30px;"/><a href="#10">•</a> </li>
+						<li><img id="11" src="img_slide/webpage_pictures/14.jpeg" style="width:760px;height:380px;position:absolute;left:30%;top:20%;margin-left:-60px;margintop:-30px;"/><a href="#11">•</a> </li>
+						<li><img id="12" src="img_slide/webpage_pictures/15.jpeg" style="width:760px;height:380px;position:absolute;left:30%;top:20%;margin-left:-60px;margintop:-30px;"/><a href="#12">•</a> </li>
+						
+
+
+					</ul>
+
+					</div>
+
+					
+			</center>
+
+<br />
+
+<table class="about">
+	<tr class="about-row">
+		<td class="col-1"> </td>
+	</tr>
+	<tr class="about-row">
+		<td class="col-1"> </td>
+	</tr>
+	
+
+	<tr class="about-row">
+		<td class="col-1">Topic:</td><td class="col-2">Climate and Extreme Events</td>
+	</tr>
+
+	<tr class="about-row">
+		<td class="col-1">Date:</td><td class="col-2">July 22nd - Aug 2nd, 2024</td>
+	</tr>
+
+	<tr class="about-row">
+		<td class="col-1">Application timeline:</td><td class="col-2">Application opens on Mar 4th, 2024</td>
+	</tr>
+
+	<tr class="about-row">
+		<td class="col-10"> </td><td class="col-2">Application closes on Apr 28th, 2024</td>
+	</tr>
+
+	<tr class="about-row">
+		<td class="col-10"> </td><td class="col-2">Results will be announced in May, 2024</td>
+	</tr>
+
+
+	<tr class="about-row">
+		<td class="col-1">Participants:</td><td class="col-2">The application is open to graduate students and postdocs. International candidates are also eligible to apply.</td>
+	</tr>
+
+	<tr class="about-row">
+		<td class="col-1">Description:</td><td class="col-2">Rossbypalooza is a two-week long project-oriented summer school for people from a broad field of atmospheric, oceanic and planetary sciences. The goal is to provide a platform for interactions among students and faculty to understand climate extremes, their impacts, and their connection to climate change from various perspectives including small-to-large-scale dynamics and data-driven methodologies. The school will consist of lectures and projects where participants will work in groups to address a question of their choice, mentored by one of the faculty members.</td>
+	</tr>
+	<tr class="about-row">
+		<td class="col-1">Acknowledgement:</td><td class="col-2">Rossbypalooza is funded by National Science Fundation (NSF) and Department of the Geophysical Sciences. The computational resources are provided by the Research Computing Center (RCC) at UChicago. The organizers want to thank their generous support for making the event possible.</td>
+	</tr>
+
+</table>
+			<!-- <span class="field">Topic:</span> <span class="info">Understanding climate through simple models </span>
+				<span class="field">Date:</span> <span class="info">June 11th – 23rd, 2018 </span>
+				<span class="field">Application timeline:</span> <span class="info">Application opens on February 11th<br>
+				Application closes on April 10th<br> Results will be announced by April 27th </span>
+
+				<span class="field">Participants:</span> <span class="info">Graduate students and Postdocs </span>
+
+				<span class="field">Brief description:</span> <span class="info">Rossbypalooza is a two-week-long project-oriented summer school for people from a broad field of atmospheric, oceanic and planetary sciences. The goal is to provide a platform for interactions among students and faculty to understand the climate of Earth and other planets via simplified models. The school will consist of lectures and projects where participants will work in groups to address a question of their choice, mentored by one of the faculty members. Participants will present their findings at the end of the school. </span> -->
+
+
+
+			<!-- </div> -->
+
+
+			</section>
+
+			<!-- ABOUT -->
+			<section id="content2" class="tab-content">
+				<h3>Background</h3>
+		      	<p>Rossbypalooza is a student-led summer school at the University of Chicago. It is named after the Swedish meteorologist <a href="https://en.wikipedia.org/wiki/Carl-Gustaf_Rossby" target="new">Carl Gustav Rossby</a> and <a href="https://www.lollapalooza.com/" target="new">Lollapalooza</a>, the annual music festival of Chicago. Carl Gustav Rossby was the head of the department of meteorology in the University of Chicago when he did his pioneering work on the Rossby waves of Earth’s atmosphere. In the spirit of celebrating climate science with fun, Rossbypalooza brings together people from different fields to understand the climate of Earth and other planets. Check out the past Rossbypalooza held in <a href="http://rossbypalooza.org/rossby2016" target="new">2016</a>, <a href="http://rossbypalooza.org/rossby2018" target="new">2018</a>, and <a href="http://rossbypalooza.org/rossby2022" target="new">2022</a>!</p>
+
+				<h3>Rossbypalooza 2024 Focus</h3>
+				<p> This year’s topic is “<b>Climate and Extreme events</b>”. Extreme events pose significant concerns for both climate and social impacts, particularly as they become more frequent and intense under climate change. However, confidence in understanding the trend of extreme events varies due to limitations in observational data and deficiencies in climate models. To address these challenges, we will develop theoretical frameworks, utilize tools such as climate models and machine learning to gain insights, and conduct risk assessments aimed at mitigating the impacts of extreme events in a changing climate.</p>
+
+				<h3>Program Structure</h3>
+				<p>The summer school will consist of lecture series by faculty in the first week, introducing their experience of tackling problems related to extreme events. However, the focus of the program is a hackathon, where participants will work in groups throughout the two weeks to solve problems in consultation with the faculty members. At the end of program, participants will present their results and get feedbacks from the faculty.</p>
+
+				<p>This school is open to graduate students and postdocs working in atmospheric, oceanic, sea ice, glacier, and (exo)planetary sciences. Last time, we accepted 27 external students in total. People interested in climate research with applied math or physics background are also encouraged to apply. Please contact us at rossbypalooza@gmail.com for further details.</p>
+
+
+                                <h3>Rossbypalooza 2024 Organization Group</h3>
+				<p> <td class="web"><a href="https://geosci.uchicago.edu/people/siming-liu" target="new">Siming Liu</a></td>, <td class="web"><a href="https://geosci.uchicago.edu/people/yaoxuan-zeng/" target="new">Yaoxuan Zeng</a></td>, <td class="web"><a href="https://geosci.uchicago.edu/people/xuan-ji/" target="new">Xuan Ji</a></td>, <td class="web"><a href="https://geosci.uchicago.edu/people/joonsuk-kang/" target="new">Joonsuk Kang</a></td>, <td class="web"><a href="https://geosci.uchicago.edu/people/carly-kleinstern/" target="new">Carly KleinStern</a></td>, <td class="web"><a href="https://geosci.uchicago.edu/people/giorgio-sarro/" target="new">Giorgio Sarro</a></td>, <td class="web"><a href="https://geosci.uchicago.edu/people/lin-yao/" target="new">Lin Yao</a></td>, <td class="web"><a href="https://geosci.uchicago.edu/people/nuanliang-zhu/" target="new">Nuanliang Zhu</a></td>, <td class="web"><a href="https://geosci.uchicago.edu/people/noboru-nakamura/" target="new">Noboru Nakamura</a></td>, and <td class="web"><a href="https://geosci.uchicago.edu/people/tiffany-shaw/" target="new">Tiffany Shaw</a></td>. </p>
+
+			</section>
+
+			<section id="content3" class="tab-content">
+				<!-- <h3>Faculty</h3> -->
+
+
+
+<p>Click on a faculty member to see their research interests and Rossbypalooza contributions!</p>
+<div class="ftab">
+
+<!-- PAUL O'GORMAN -->
+<button class="ftablinks" onclick="openCity(event, 'paul')">
+	  <table class="tf">
+	  	<tr>
+	  		<td class="col_1">
+	  			<img src="img_faculty/Paul.jpg">
+	  		</td>
+	  		<td class="col_2">
+				<h4>Paul O'Gorman</h4>
+				<h5>Keynote Speaker</h5>
+				<p>Massachusetts Institute of Technology</p>
+	  		</td>
+	  	</tr>
+	  </table>
+</button><br>
+
+<!-- DORIAN ABBOT -->
+<button class="ftablinks" onclick="openCity(event, 'dorian')">
+          <table class="tf">
+                <tr>
+                        <td class="col_1">
+                                <img src="img_faculty/Dorian.png">
+                        </td>
+                        <td class="col_2">
+                                <h4>Dorian Abbot</h4>
+                                <p>University of Chicago</p>
+                        </td>
+                </tr>
+          </table>
+</button><br>
+
+<!-- WILLIAM BOOS -->
+<button class="ftablinks" onclick="openCity(event, 'william')">
+          <table class="tf">
+                <tr>
+                        <td class="col_1">
+                                <img src="img_faculty/William.jpg">
+                        </td>
+                        <td class="col_2">
+                                <h4>William Boos</h4>
+                                <p>University of California, Berkeley</p>
+                        </td>
+                </tr>
+          </table>
+</button><br>
+
+<!-- PEDRAM HASSANZADEH-->
+<button class="ftablinks" onclick="openCity(event, 'pedram')">
+          <table class="tf">
+                <tr>
+                        <td class="col_1">
+                                <img src="img_faculty/Pedram.jpeg">
+                        </td>
+                        <td class="col_2">
+                                <h4>Pedram Hassanzadeh</h4>
+                                <p>University of Chicago</p>
+                        </td>
+                </tr>
+          </table>
+</button><br>
+
+<!-- MALTE JANSEN -->
+<button class="ftablinks" onclick="openCity(event, 'malte')">
+          <table class="tf">
+                <tr>
+                        <td class="col_1">
+                                <img src="img_humans_c/jansen.jpeg">
+                        </td>
+                        <td class="col_2">
+                                <h4>Malte Jansen</h4>
+                                <p>University of Chicago</p>
+                        </td>
+                </tr>
+          </table>
+</button><br>
+
+<!-- ELISABETH MOYER -->
+<button class="ftablinks" onclick="openCity(event, 'elisabeth')">
+          <table class="tf">
+                <tr>
+                        <td class="col_1">
+                                <img src="img_humans_c/moyer.jpeg">
+                        </td>
+                        <td class="col_2">
+                                <h4>Elisabeth Moyer</h4>
+                                <p>University of Chicago</p>
+                        </td>
+                </tr>
+          </table>
+</button><br>
+
+<!-- NOBORU NAKAMURA-->
+<button class="ftablinks" onclick="openCity(event, 'noboru')">
+
+        <table class="tf">
+                <tr>
+                        <td class="col_1">
+                                <img src="img_humans_c/nakamura.jpeg">
+                        </td>
+
+                        <td class="col_2">
+                                <h4>Noboru Nakamura</h4>
+                                <p>University of Chicago</p>
+                        </td>
+                </tr>
+        </table>
+</button><br>
+
+<!-- TIFFANY SHAW -->
+<button class="ftablinks" onclick="openCity(event, 'tiffany')">
+
+        <table class="tf">
+                <tr>
+                        <td class="col_1">
+                                <img src="img_humans_c/shaw.jpeg">
+                        </td>
+                        <td class="col_2">
+                                <h4>Tiffany Shaw</h4>
+                                <p>University of Chicago</p>
+                        </td>
+                </tr>
+        </table>
+</button><br>
+
+<!-- ADAM SOBEL -->
+<button class="ftablinks" onclick="openCity(event, 'adam')">
+          <table class="tf">
+                <tr>
+                        <td class="col_1">
+                                <img src="img_faculty/Adam.jpg">
+                        </td>
+                        <td class="col_2">
+                                <h4>Adam Sobel</h4>
+                                <p>Columbia University</p>
+                        </td>
+                </tr>
+          </table>
+</button><br>
+
+
+<!-- Jonathan Weare -->
+<button class="ftablinks" onclick="openCity(event, 'jonathan')">
+          <table class="tf">
+                <tr>
+                        <td class="col_1">
+                                <img src="img_faculty/Jonathan.png">
+                        </td>
+                        <td class="col_2">
+                                <h4>Jonathan Weare</h4>
+                                <p>New York University</p>
+                        </td>
+                </tr>
+          </table>
+</button><br>
+
+<!-- DA YANG -->
+<button class="ftablinks" onclick="openCity(event, 'da')">
+          <table class="tf">
+                <tr>
+                        <td class="col_1">
+                                <img src="img_humans_c/yang.jpeg">
+                        </td>
+                        <td class="col_2">
+                                <h4>Da Yang</h4>
+                                <p>University of Chicago</p>
+                        </td>
+                </tr>
+          </table>
+</button><br>
+
+
+<!-- MINGYI WANG -->
+<button class="ftablinks" onclick="openCity(event, 'mingyi')">
+	  <table class="tf">
+	  	<tr>
+	  		<td class="col_1">
+	  			<img src="img_faculty/Mingyi.jpeg">
+	  		</td>
+	  		<td class="col_2">
+				<h4>Mingyi Wang</h4>
+				<p>University of Chicago</p>
+	  		</td>
+	  	</tr>
+	  </table>
+</button><br>
+
+
+</div>
+
+
+<!-- External Link !-->
+
+
+
+<div id="noboru" class="ftabcontent">
+
+<table>
+<tr>
+<td>
+	  <img src="img_humans_c/nakamura.jpeg">
+
+	  <table class = "web">
+	  <tr>
+	  <td><h2>Noboru Nakamura</h2></td><td class="web">(<a href="https://geosci.uchicago.edu/people/noboru-nakamura/" target="new">Website</a>)</td>
+      </tr>
+	  </table>
+
+	  <h3>University of Chicago</h3>
+
+	  <h4>Faculty and project mentor</h4>
+
+	  <p>My research interests are in the large-scale circulation of the atmosphere, transport and mixing, diabatic sources of Rossby waves.</p>
+</td>
+</tr>
+
+<!-- <tr>
+  <td>
+	  <h4>Rossbypalooza Talk #1 - Monday at 11:00am</h4>
+
+	  <p>Title of Awesome Dynamics Talk</p>
+
+	  <h4>Rossbypalooza Talk #2 - Tuesday at 2:00pm</h4>
+
+	  <p>Title of Awesome Dynamics Talk</p>
+
+	  <h4>Rossbypalooza Talk #3 - Tuesday at 2:00pm</h4>
+
+	  <p>Title of Awesome Dynamics Talk</p>
+  </td>
+</tr> !-->
+
+
+</table>
+
+</div>
+
+
+
+
+<div id="tiffany" class="ftabcontent">
+
+<table>
+<tr>
+<td>
+	  <img src="img_humans_c/shaw.jpeg">
+
+	  <table class = "web">
+	  <tr>
+	  <!-- <td><h2>Tiffany Shaw</h2></td><td class="web">(<a href="http://geosci.uchicago.edu/~tas1/" target="new">Website</a>)</td> -->
+	  <td><h2>Tiffany Shaw</h2></td><td class="web">(<a href="https://geosci.uchicago.edu/people/tiffany-shaw/" target="new">Website</a>)</td>
+      </tr>
+	  </table>
+
+	  <h3>University of Chicago</h3>
+
+	  <h4>Faculty and project mentor</h4>
+
+	  <p>Prof. Shaw’s research focuses on the physics of the atmosphere and climate system past, present and future. She seeks to understand the underlying mechanisms controlling the response to climate changes so that we can have greater confidence in future projections. Her approach combines theory (primarily conservation laws), numerical modeling across a hierarchy of complexity and observational data analysis.</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+
+
+
+<div id="elisabeth" class="ftabcontent">
+
+<table>
+<tr>
+<td>
+	  <img src="img_humans_c/moyer.jpeg">
+
+	  <table class = "web">
+	  <tr>
+	  <td><h2>Elisabeth Moyer</h2></td><td class="web">(<a href="https://geosci.uchicago.edu/people/elisabeth-moyer/" target="new">Website</a>)</td>
+      </tr>
+	  </table>
+
+	  <h3>University of Chicago</h3>
+
+	  <h4>Faculty and project mentor</h4>
+
+	  <p> My research interests fall in two main threads. The first includes the use of the isotopic composition of atmospheric water vapor as a tracer of convective processes, cirrus formation, and stratosphere-troposphere exchange; and the design of spectroscopic techniques for in-situ trace gas measurements. The second includes climate (and human) response to greenhouse-gas forcing; development of tools for impacts assessment; statistical emulation of climate model output; and climate and energy policy evaluation.</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+
+
+<div id="da" class="ftabcontent">
+
+<table>
+<tr>
+<td>
+	  <img src="img_humans_c/yang.jpeg">
+
+	  <table class = "web">
+	  <tr>
+	  <td><h2>Da Yang</h2></td><td class="web">(<a href="https://geosci.uchicago.edu/people/da-yang/" target="new">Website</a>)</td>
+      </tr>
+	  </table>
+
+	  <h3>University of Chicago</h3>
+
+	  <h4>Faculty and project mentor</h4>
+
+	  <p>My research interests are in the physics of rainstorms and atmospheric circulations in a changing climate. I am particularly interested in what environmental factors control the temporal and spatial scales of rainstorms, how will the characteristic scales of rainstorms change in a warmer climate, and how the collective effects of individual rainstorms, in turn, shape Earth's climate. </p>
+</td>
+</tr>
+</table>
+
+</div>
+
+
+
+
+<div id="malte" class="ftabcontent">
+
+<table>
+<tr>
+<td>
+	  <img src="img_humans_c/jansen.jpeg">
+
+	  <table class = "web">
+	  <tr>
+	  <td><h2>Malte Jansen</h2></td><td class="web">(<a href="https://geosci.uchicago.edu/people/malte-jansen/" target="new">Website</a>)</td>
+      </tr>
+	  </table>
+
+	  <h3>University of Chicago</h3>
+
+	  <h4>Faculty and project mentor</h4>
+
+	  <p>My research aims to improve our understanding of the dynamics of the oceans, the atmosphere, and the coupled climate system. I am particularly interested in the processes that govern the transport of heat and other constituents in the ocean. Understanding the mechanisms of these transport processes is key to our understanding of changes in the climate system during Earth’s past and future. I tackle these questions using a combination of theoretical fluid dynamics, numerical simulations and analysis of observational data.</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+
+<div id="dorian" class="ftabcontent">
+
+<table>
+<tr>
+<td>
+          <img src="img_faculty/Dorian.png">
+
+          <table class = "web">
+          <tr>
+          <td><h2>Dorian Abbot</h2></td><td class="web">(<a href="https://geosci.uchicago.edu/people/dorian-abbot/" target="new">Website</a>)</td>
+      </tr>
+          </table>
+
+          <h3>University of Chicago</h3>
+
+          <h4>Faculty and project mentor</h4>
+
+	  <p> I use mathematical and computational models to understand and explain fundamental problems in Earth and Planetary Sciences. I have worked on problems related to climate, paleoclimate, planetary habitability, and exoplanets. Of most relevance to this Rossbypalooza, I have collaborated with Jon Weare and others to apply rare event simulation techniques to geophysical problems. </p>
+</td>
+</tr>
+</table>
+
+</div>
+
+<div id="pedram" class="ftabcontent">
+
+<table>
+<tr>
+<td>
+          <img src="img_faculty/Pedram.jpeg">
+
+          <table class = "web">
+          <tr>
+          <td><h2>Pedram Hassanzadeh</h2></td><td class="web">(<a href="https://geosci.uchicago.edu/people/pedram-hassanzadeh/" target="new">Website</a>)</td>
+      </tr>
+          </table>
+
+          <h3>University of Chicago</h3>
+
+          <h4>Faculty and project mentor</h4>
+
+	  <p> I lead the <a href="https://pedram.rice.edu/" target="new">Climate Extremes Theory and Data (CeTD) group</a>, which focuses on integrating theory, simulations, observations, and machine learning (ML) techniques to understand the dynamics and future changes of extreme weather events in a changing climate. My group is also interested in developing new scientific ML techniques for improving the modeling and analysis of the climate system and turbulent flows, and more broadly, multi-scale, nonlinear dynamical systems.</p>
+   
+</td>
+</tr>
+</table>
+
+</div>
+
+
+
+
+<div id="william" class="ftabcontent">
+
+<table>
+<tr>
+<td>
+          <img src="img_faculty/William.jpg">
+
+          <table class = "web">
+          <tr>
+          <td><h2>William Boos</h2></td><td class="web">(<a href="https://eps.berkeley.edu/people/william-boos" target="new">Website</a>)</td>
+      </tr>
+          </table>
+
+          <h3>University of California, Berkeley</h3>
+
+          <h4>Faculty and project mentor</h4>
+
+	  <p>William Boos’ research focuses on large-scale climate dynamics— understanding how atmospheric circulations, ocean interactions, radiative transfer, and land surface processes control regional and global climate. Some of his research centers on monsoons, which are continental-scale atmospheric circulations that deliver water to billions of people in Asia, Africa, the Americas, and northern Australia; monsoon winds also constitute a major component of Earth’s global atmospheric circulation. He also studies extreme weather and climate phenomena, seeking to understand how fluid dynamics and thermodynamics govern the behavior of atmospheric vortices, heat waves, and intense precipitation. He pays particular attention to the phase changes of water in Earth’s atmosphere, as the interaction of precipitating clouds with planetary-scale flow is one of the central unresolved problems of planetary science. His work broadly aims to combine theory, observational analyses, and numerical models to discover the fundamental mechanisms governing atmospheric and climate phenomena.</p>
+
+</td>
+</tr>
+</table>
+
+</div>
+
+
+<div id="paul" class="ftabcontent">
+
+<table>
+<tr>
+<td>
+          <img src="img_faculty/Paul.jpg">
+
+          <table class = "web">
+          <tr>
+          <td><h2>Paul O'Gorman</h2></td><td class="web">(<a href="https://pog.mit.edu" target="new">Website</a>)</td>
+      </tr>
+          </table>
+
+          <h3>Massachusetts Institute of Technology</h3>
+
+          <h4>Keynote speaker and project mentor</h4>
+
+	  <p>Professor O'Gorman's research is motivated by the need to understand how the hydrological cycle and atmospheric circulations respond to climate change. Particular areas of interest include the extratropical storm tracks, moist convection, and extreme precipitation. In addition to developing theory and analyzing simulations and observations, his research group is working to improve climate models through machine learning, with a focus on the representation of precipitation statistics.</p>
+
+</td>
+</tr>
+</table>
+
+</div>
+
+
+<div id="jonathan" class="ftabcontent">
+
+<table>
+<tr>
+<td>
+          <img src="img_faculty/Jonathan.png">
+
+          <table class = "web">
+          <tr>
+          <td><h2>Jonathan Weare</h2></td><td class="web">(<a href="https://cims.nyu.edu/~weare/" target="new">Website</a>)</td>
+      </tr>
+          </table>
+
+          <h3>New York University</h3>
+
+          <h4>Faculty and project mentor</h4>
+
+	  <p>My group and I develop, formally analyze, and apply new theoretical and computational tools to address modern grand challenges in fundamental science. These include methods to study important dynamical phenomena that would otherwise require experimental observation or model simulation on prohibitively long time scales (for example, to study extreme weather and climate events or chemical reactions), accurate reduced complexity models and simulation tools for multiscale physical processes (for example, to describe the behavior of microscopic models at macroscopic length scales), techniques for learning hidden signals and model parameters from data (for example, to identify exoplanet parameters), and new techniques for solving enormous problems in linear algebra (for example, to characterize the fundamental properties of molecules).</p>
+
+</td>
+</tr>
+</table>
+
+</div>
+
+
+
+<div id="mingyi" class="ftabcontent">
+
+<table>
+<tr>
+<td>
+          <img src="img_faculty/Mingyi.jpeg">
+
+          <table class = "web">
+          <tr>
+          <td><h2>Mingyi Wang</h2></td><td class="web">(<a href="https://geosci.uchicago.edu/people/mingyi-wang/" target="new">Website</a>)</td>
+      </tr>
+          </table>
+
+          <h3>University of Chicago</h3>
+
+          <h4>Faculty lecturer</h4>
+
+          <p>The major remaining uncertainty in climate prediction comes from the aerosol-cloud-climate interactions in the atmosphere. Therefore, an accurate representation of aerosols and clouds is the foundation of any effort to forecast long-term climate change. My research leverages interdisciplinary expertise in atmospheric chemistry and aerosol microphysics to understand how aerosol particle formation drives urban smog, how aerosol forcing will change in future emission scenarios, and how aerosol dynamics can inform climate intervention research. My lab aims to achieve this goal by providing novel approaches to (a) constrain the oxidative chemistry of emerging pollutants for particle nucleation, (b) resolve microphysical processes in particle growth and survival, and (c) develop a particle dynamics model with experimental and meteorological inputs for real-world deployment.</p>
+
+</td>
+</tr>
+</table>
+
+</div>
+
+
+<div id="adam" class="ftabcontent">
+
+<table>
+<tr>
+<td>
+          <img src="img_faculty/Adam.jpg">
+
+          <table class = "web">
+          <tr>
+          <td><h2>Adam Sobel</h2></td><td class="web">(<a href="https://eesc.columbia.edu/content/adam-sobel" target="new">Website</a>)</td>
+      </tr>
+          </table>
+
+          <h3>Columbia University</h3>
+
+          <h4>Faculty and project mentor</h4>
+
+          <p>Adam Sobel studies weather and climate, with a focus on extreme weather events and a particular interest in the tropics. Sobel’s research has two streams, one basic and one more applied. The basic research focuses on tropical meteorology, especially the interaction between turbulent deep convection and large-scale atmospheric dynamics. The applied research, with colleagues in both academia and the insurance industry, involves the development and use of statistical-dynamical models to assess the risks to society from tropical cyclones and other extreme weather events in the changing climate.</p>
+
+</td>
+</tr>
+</table>
+
+</div>
+
+
+<script>
+function openCity(evt, cityName) {
+    var i, ftabcontent, ftablinks;
+    ftabcontent = document.getElementsByClassName("ftabcontent");
+    for (i = 0; i < ftabcontent.length; i++) {
+        ftabcontent[i].style.display = "none";
+    }
+    ftablinks = document.getElementsByClassName("ftablinks");
+    for (i = 0; i < ftablinks.length; i++) {
+        ftablinks[i].className = ftablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+
+
+
+<!-- <div id="slideChunk">
+</div> -->
+
+
+			</section>
+
+			<section id="content4" class="tab-content">
+				<!-- <h3>Headline 4</h3> -->
+				<h3>Timeline</h3>
+				<p>Application opens on Mar 4th, 2024</p>
+				<p>Application closes on Apr 28th, 2024</p>
+				<p>Results will be announced in May, 2024</p>
+				
+
+				<h3>Requirements</h3>
+				<p> 1. Curriculum Vitae: Please make it no more than 2 pages. Accepted formats: doc/docx/pdf.</p>
+				<p> 2. Research statement: Please describe your research for scientists outside of your field within 300 words. </p>
+				<p> 3. Statement of purpose: Please describe how you will benefit from Rossbypalooza within 200 words. </p>
+        		<p> 4. You will also be asked in the application form if you would like to work on a research idea of your own for the group project (not required). If you do, please also prepare a paragraph of idea description.</p>
+        		
+		      	<a href="https://forms.gle/WheHZntqEpfVGxaG9" target="new">Click here to open the application!</a>
+			</section>
+
+			<section id="content5" class="tab-content">
+
+				<h3>Funding</h3>
+		      	<p>Rossbypalooza is free for all participants. This includes tuition, housing in Hyde Park, breakfast, and lunch. Funding for travel reimbursements is available for some applicants, especially for groups underrepresented in climate sciences (e.g., women, people of color, people with disabilities, and LGBTQ scientists/students). Please indicate your membership in any of these groups, as well as your desire for travel reimbursement, in the application form.</p>
+
+				<h3>Location</h3>
+		      	<p>Rossbypalooza will be held on <a href="https://www.google.com/maps/place/The+University+of+Chicago/@41.7855824,-87.6087627,15z/data=!4m5!3m4!1s0x880e291613664845:0x5f7f65cf00d2f5ca!8m2!3d41.788609!4d-87.5987148" target="new">The University of Chicago campus</a> in Chicago's historic Hyde Park neighborhood. Midway Airport is connected directly to Hyde Park by the #55 bus. For those flying into O'Hare, take the Blue line to downtown Chicago, and then transfer to the #2 / #6 bus, which go to Hyde Park. Uber and Lyft also serve the city of Chicago, between airports and the campus.</p>
+
+				<h3>Lodging</h3>
+		      	<p>All students will be housed in single rooms or double rooms on The University of Chicago campus in Hyde Park. Rooms are fully furnished, and the details of the location and room amenities will be available soon. If you have any questions or special housing needs, please contact us directly at rossbypalooza@gmail.com.</p>
+
+				<h3>Food</h3>
+		      	<p>Breakfast and lunch will be provided in the university cafeteria each weekday. Participants are responsible for their own dinner. There are many fantastic resturants for you to explore in Hyde Park and downtown Chicago!</p>
+
+				<h3>Code of Conduct</h3>
+		      	<p>Rossbypalooza is dedicated to providing a harassment-free workshop experience for everyone, regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age or religion. We do not tolerate harassment of workshop participants in any form. Workshop participants violating these rules may be sanctioned or expelled from the workshop at the discretion of the workshop organizers. <a href="http://www.rossbypalooza.org/rossby2016/code_of_conduct.html" target="new">Read the full code of conduct here.</a></p>
+
+
+
+			</section>
+
+
+			<section id="content6" class="tab-content">
+			
+			<h3> Projects formulated during Rossbypalooza have led to multiple peer-reviewed papers. Here is a list of publications relevant to Rossbypalooza:</h3>
+			<p> 1. McKinnon, Karen A., Andrew Poppick, Etienne Dunn-Sigouin, and Clara Deser. "An “observational large ensemble” to compare observed and modeled temperature trend uncertainty due to internal variability." Journal of Climate 30, no. 19 (2017): 7585-7598. <td class="web"><a href="https://journals.ametsoc.org/view/journals/clim/30/19/jcli-d-16-0905.1.xml" target="new">link</a></td> </p>
+			<p> 2. Paradise, Adiv, Cesar B. Rocha, Pragallva Barpanda, and Noboru Nakamura. "Blocking statistics in a varying climate: Lessons from a “traffic jam” model with pseudostochastic forcing." Journal of the Atmospheric Sciences 76, no. 10 (2019): 3013-3027. <td class="web"><a href="https://journals.ametsoc.org/view/journals/atsc/76/10/jas-d-19-0095.1.xml" target="new">link</a></td> </p>
+			<p> 3. Williams, Daniel A., Xuan Ji, Paul Corlies, and Juan M. Lora. "Clouds and Seasonality on Terrestrial Planets with Varying Rotation Rates." The Astrophysical Journal 963, no. 1 (2024): 36. <td class="web"><a href="https://iopscience.iop.org/article/10.3847/1538-4357/ad192f/meta" target="new">link</a></td> </p>
+			<p> 4. Loftus, Kaitlyn, Yangcheng Luo, Bowen Fan, and Edwin S. Kite. "Extreme weather variability on hot rocky exoplanet 55 Cancri e explained by magma temperature–cloud feedback." Proceedings of the National Academy of Sciences 122, no. 17 (2025): e2423473122. <td class="web"><a href="https://www.pnas.org/doi/abs/10.1073/pnas.2423473122" target="new">link</a></td> </p>
+				<!--p>The full program schedule is available in the link
+					<a href="https://docs.google.com/document/d/1g9grQMskJdXvaEm6Rd-hbROeH_YH-_DWxjijLKEd7LI/edit?usp=sharing" target="new">here</a>.
+				</p>
+
+				<p> Video recordings are available to registered participants, and can be accessed from the link <a href="https://docs.google.com/document/d/1sHyxowZQ76tmlTrdej5KoPPjkpWQ75jxOyK3QLB4Sj4/edit?usp=sharing" target="new">here</a>.
+				 </p!-->
+
+				<!-- <table class="cal">
+
+
+					<tr class="cal-row">
+						<td class="col-1">Monday June 11th</td><td class="col-2">9:00am - Event #1</td>
+					</tr>
+
+					<tr class="cal-row">
+						<td class="col-10"> </td><td class="col-2">10:00am - Event #2</td>
+					</tr>
+
+					<tr class="cal-row">
+						<td class="col-10"> </td><td class="col-2">11:00am - Event #3</td>
+					</tr>
+
+
+
+
+					<tr class="cal-row">
+						<td class="col-1">Tuesday June 12th</td><td class="col-2">9:00am - Event #1</td>
+					</tr>
+
+					<tr class="cal-row">
+						<td class="col-10"> </td><td class="col-2">10:00am - Event #2</td>
+					</tr>
+
+					<tr class="cal-row">
+						<td class="col-10"> </td><td class="col-2">11:00am - Event #3</td>
+					</tr>
+
+
+
+
+					<tr class="cal-row">
+						<td class="col-1">Wednesday June 13th</td><td class="col-2">9:00am - Event #1</td>
+					</tr>
+
+					<tr class="cal-row">
+						<td class="col-10"> </td><td class="col-2">10:00am - Event #2</td>
+					</tr>
+
+					<tr class="cal-row">
+						<td class="col-10"> </td><td class="col-2">11:00am - Event #3</td>
+					</tr>
+
+
+
+
+					<tr class="cal-row">
+						<td class="col-1">Thursday June 14th</td><td class="col-2">9:00am - Event #1</td>
+					</tr>
+
+					<tr class="cal-row">
+						<td class="col-10"> </td><td class="col-2">10:00am - Event #2</td>
+					</tr>
+
+					<tr class="cal-row">
+						<td class="col-10"> </td><td class="col-2">11:00am - Event #3</td>
+					</tr>
+
+
+
+
+
+					<tr class="cal-row">
+						<td class="col-1">Friday June 15th</td><td class="col-2">9:00am - Event #1</td>
+					</tr>
+
+					<tr class="cal-row">
+						<td class="col-10"> </td><td class="col-2">10:00am - Event #2</td>
+					</tr>
+
+					<tr class="cal-row">
+						<td class="col-10"> </td><td class="col-2">11:00am - Event #3</td>
+					</tr>
+
+
+
+				</table> -->
+
+
+
+
+                        </section>
+		</div>
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
