@@ -177,12 +177,6 @@ label .fa {
 
 /*Media query*/
 
-
-
-
-
-
-
  * {
   margin: 0px;
   padding: 0px;
@@ -213,9 +207,16 @@ label .fa {
 
 #slideshow {
 	margin: 0px auto;
+	/* removed by HHC */
 	position: absolute;
 	top: 100px;
+	/* End of removal */
 	width: 100%;
+	/* Added by HHC */
+	/* max-width: 760px;
+	position: relative;
+	aspect-ratio: 16/9; */
+	/* End of adding */
 }
 
 #slideshow ul {
@@ -265,10 +266,18 @@ label .fa {
 
 #slideshow li img {
   position: absolute;
+  /* Removed by HHC */
   top: 30px;
   left: 20%;
   z-index: -1;
   max-width: 60%;
+  /* End of removal */
+  /* Added by HHC */
+  /* inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; */
+  /* End of adding */
 
 
   -webkit-transition: opacity 0.5s ease-in-out;
@@ -371,19 +380,23 @@ label .fa {
 
 
 
-/* .tf {
-	width: 50%;
-} */
+.tf {
+	/* width: 50%; */
+	width: 100%;
+	/* border-collapse: collapse; */
+	table-layout: fixed;
+}
 
 .tf .col_1{
-	/* vertical-align: center; */
+	vertical-align: middle;
 	/* background: #a82a2a; */
 	/* border: 2px solid #bb1d99; */
-	/* width: 50px; */
+	width: 80px;
 }
 
 .tf .col_2{
-	vertical-align:center;
+	/* vertical-align:middle; */
+	vertical-align: top;
 	width: 100%;
 	background: none;
 	text-align: left;
@@ -394,7 +407,12 @@ label .fa {
 
 .tf  img{
 	border: 2px solid white;
-	max-width: 60px;
+	/* max-width: 60px; */
+	width: 80px;
+	height: 100px;
+	display: block;
+	object-fit: cover;
+	object-position: top center;
 }
 
 
