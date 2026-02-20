@@ -376,14 +376,14 @@ label .fa {
 } */
 
 .tf .col_1{
-	/* vertical-align: center; */
+	vertical-align: middle;
 	/* background: #a82a2a; */
 	/* border: 2px solid #bb1d99; */
 	/* width: 50px; */
 }
 
 .tf .col_2{
-	vertical-align:center;
+	vertical-align:middle;
 	width: 100%;
 	background: none;
 	text-align: left;
@@ -394,7 +394,11 @@ label .fa {
 
 .tf  img{
 	border: 2px solid white;
-	max-width: 60px;
+	/* max-width: 60px; */
+	width: 80px;
+	height: 100px;
+	object-fit: cover;
+	object-position: top;
 }
 
 
